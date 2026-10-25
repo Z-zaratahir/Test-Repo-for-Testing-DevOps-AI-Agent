@@ -1,0 +1,17 @@
+name: Auto Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled]
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-merge pull request
+        uses: pascalgn/automerge-action@v0.15.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: "squash"
+          MERGE_LABELS: ""
+          MERGE_REQUIRED_APPROVALS: "0"
