@@ -1,0 +1,2 @@
+requests
+-e file:///home/zara/local-dev/some-private-lib
